@@ -13,6 +13,7 @@
 		12CD6E55274C25440024BC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12CD6E53274C25440024BC05 /* Main.storyboard */; };
 		12CD6E57274C25470024BC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12CD6E56274C25470024BC05 /* Assets.xcassets */; };
 		12CD6E5A274C25470024BC05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12CD6E58274C25470024BC05 /* LaunchScreen.storyboard */; };
+		12CD6E63274C3D380024BC05 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 12CD6E62274C3D380024BC05 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12CD6E63274C3D380024BC05 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = AVPlayer;
+			packageProductDependencies = (
+				12CD6E62274C3D380024BC05 /* Kingfisher */,
+			);
 			productName = AVPlayer;
 			productReference = 12CD6E4A274C25440024BC05 /* AVPlayer.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 12CD6E41274C25430024BC05;
+			packageReferences = (
+				12CD6E61274C3D380024BC05 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 12CD6E4B274C25440024BC05 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -217,7 +225,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -360,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		12CD6E61274C3D380024BC05 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		12CD6E62274C3D380024BC05 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12CD6E61274C3D380024BC05 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12CD6E42274C25430024BC05 /* Project object */;
 }
