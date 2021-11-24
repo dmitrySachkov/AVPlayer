@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D03BB071B0F9C25C5B7F040 /* Pods_AVPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB916F78F3AE280487E0808 /* Pods_AVPlayer.framework */; };
+		1205CA27274D718200902C18 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1205CA26274D718100902C18 /* MyCollectionViewCell.swift */; };
 		12CD6E4E274C25440024BC05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD6E4D274C25440024BC05 /* AppDelegate.swift */; };
 		12CD6E50274C25440024BC05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD6E4F274C25440024BC05 /* SceneDelegate.swift */; };
 		12CD6E52274C25440024BC05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CD6E51274C25440024BC05 /* ViewController.swift */; };
@@ -17,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1205CA26274D718100902C18 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		12CD6E4A274C25440024BC05 /* AVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CD6E4D274C25440024BC05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12CD6E4F274C25440024BC05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,6 +28,9 @@
 		12CD6E56274C25470024BC05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12CD6E59274C25470024BC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12CD6E5B274C25470024BC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DB916F78F3AE280487E0808 /* Pods_AVPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		916AB696896A1D851E213191 /* Pods-AVPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVPlayer.release.xcconfig"; path = "Target Support Files/Pods-AVPlayer/Pods-AVPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		B4176414B561112DD83BEFB9 /* Pods-AVPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVPlayer.debug.xcconfig"; path = "Target Support Files/Pods-AVPlayer/Pods-AVPlayer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				12CD6E63274C3D380024BC05 /* Kingfisher in Frameworks */,
+				0D03BB071B0F9C25C5B7F040 /* Pods_AVPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02F76D53D85CB595F7980717 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4176414B561112DD83BEFB9 /* Pods-AVPlayer.debug.xcconfig */,
+				916AB696896A1D851E213191 /* Pods-AVPlayer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		12CD6E41274C25430024BC05 = {
 			isa = PBXGroup;
 			children = (
 				12CD6E4C274C25440024BC05 /* AVPlayer */,
 				12CD6E4B274C25440024BC05 /* Products */,
+				02F76D53D85CB595F7980717 /* Pods */,
+				7A38D0D2164C7565863D7C7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,12 +79,21 @@
 				12CD6E4D274C25440024BC05 /* AppDelegate.swift */,
 				12CD6E4F274C25440024BC05 /* SceneDelegate.swift */,
 				12CD6E51274C25440024BC05 /* ViewController.swift */,
+				1205CA26274D718100902C18 /* MyCollectionViewCell.swift */,
 				12CD6E53274C25440024BC05 /* Main.storyboard */,
 				12CD6E56274C25470024BC05 /* Assets.xcassets */,
 				12CD6E58274C25470024BC05 /* LaunchScreen.storyboard */,
 				12CD6E5B274C25470024BC05 /* Info.plist */,
 			);
 			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		7A38D0D2164C7565863D7C7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DB916F78F3AE280487E0808 /* Pods_AVPlayer.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -76,9 +103,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12CD6E5E274C25470024BC05 /* Build configuration list for PBXNativeTarget "AVPlayer" */;
 			buildPhases = (
+				1B019E7B4DC8F850D421FE94 /* [CP] Check Pods Manifest.lock */,
 				12CD6E46274C25440024BC05 /* Sources */,
 				12CD6E47274C25440024BC05 /* Frameworks */,
 				12CD6E48274C25440024BC05 /* Resources */,
+				2FCB0AECEFD85D45734AF67D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,6 +170,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B019E7B4DC8F850D421FE94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AVPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FCB0AECEFD85D45734AF67D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AVPlayer/Pods-AVPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AVPlayer/Pods-AVPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AVPlayer/Pods-AVPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		12CD6E46274C25440024BC05 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -148,6 +219,7 @@
 			files = (
 				12CD6E52274C25440024BC05 /* ViewController.swift in Sources */,
 				12CD6E4E274C25440024BC05 /* AppDelegate.swift in Sources */,
+				1205CA27274D718200902C18 /* MyCollectionViewCell.swift in Sources */,
 				12CD6E50274C25440024BC05 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +364,7 @@
 		};
 		12CD6E5F274C25470024BC05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4176414B561112DD83BEFB9 /* Pods-AVPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,6 +393,7 @@
 		};
 		12CD6E60274C25470024BC05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 916AB696896A1D851E213191 /* Pods-AVPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

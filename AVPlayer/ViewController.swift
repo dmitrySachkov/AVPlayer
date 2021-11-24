@@ -6,58 +6,76 @@
 //
 
 import UIKit
-import AVFoundation
-import AVKit
-import Kingfisher
-
-
-//"https://www.youtube.com/watch?v=_gQ5lZJtggY"
+//import youtube_ios_player_helper
 
 class ViewController: UIViewController {
     
-    private let urlString = "https://images.app.goo.gl/Ff6oTSEkYxytXDLs9"
+    private let models = ["https://www.youtube.com/watch?v=_gQ5lZJtggY",
+                         "https://www.youtube.com/watch?v=_gQ5lZJtggY",
+                         "https://www.youtube.com/watch?v=_gQ5lZJtggY",
+                         "https://www.youtube.com/watch?v=_gQ5lZJtggY"]
     
-    private var videoView: UIImageView = {
-        let view = UIImageView()
-        view.backgroundColor = .lightGray
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    
+    private var collectionView: UICollectionView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .cyan
         setupUI()
-        playVideo()
     }
 
     private func setupUI() {
-        view.addSubview(videoView)
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: view.frame.size.width - 20,
+                                 height: (view.frame.size.width / 3 * 2) - 10)
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
+        layout.scrollDirection = .horizontal
+        
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        guard let collectionView = collectionView else { return }
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(MyCollectionViewCell.self, forCellWithReuseIdentifier: MyCollectionViewCell.identifier)
+        view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            videoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            videoView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            videoView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-            videoView.heightAnchor.constraint(equalToConstant: view.bounds.width / 3 * 2)
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            collectionView.heightAnchor.constraint(equalToConstant: view.frame.size.width / 3 * 2)
         ])
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
-    private func playVideo() {
-//        DispatchQueue.main.async {
-//            let url = NSURL(string: self.urlString)
-//            let playerItem = AVPlayerItem(url: url! as URL)
-//            let player = AVQueuePlayer(playerItem: playerItem)
-//            let playerLayer = AVPlayerLayer(player: player)
-//            playerLayer.frame = self.videoView.bounds
-//            self.videoView.layer.addSublayer(playerLayer)
-//            player.play()
-//        }
-        let url = URL(string: urlString)
-        videoView.kf.setImage(with: url)
-    }
-
+   
 }
 
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return models.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyCollectionViewCell.identifier, for: indexPath) as! MyCollectionViewCell
+        let model = models[indexPath.row]
+        cell.configure(model: model, index: indexPath)
+//        cell.delegate = self
+        return cell
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        guard let videoCell = cell as? MyCollectionViewCell else { return }
+//        videoCell.delegate = self
+//    }
+}
+
+//extension ViewController: PlayVideoDelegate {
+//    func playVideo(id: String, index: IndexPath) {
+//        guard let cell = collectionView?.cellForItem(at: index) as? MyCollectionViewCell else { return }
+//        cell.play(with: id)
+//        collectionView?.reloadData()
+//    }
+//}
